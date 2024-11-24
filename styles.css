@@ -1,0 +1,210 @@
+/* Estilos generales */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-image: url('img/imagenPrincipal.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0); /* Cambié la opacidad a 0 */
+    z-index: 1;
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animación de la imagen principal (tipografía) */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header img {
+    max-width: 50%;
+    height: auto;
+    animation: fadeInSlide 1.5s ease-out;
+    z-index: 2;
+}
+
+/* Navegación */
+nav {
+    background-color: #222;
+}
+
+nav a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e63946;
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+/* Sección General */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: #111;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+footer a:hover {
+    color: #e63946;
+}
+
+/* Estilo para el contenedor de videos */
+.video-container iframe {
+    max-width: 100%;
+    height: 315px;
+    border-radius: 10px;
+}
+
+/* Estilos para la sección de Contacto */
+section#contacto {
+    background-color: #222;
+}
+
+section#contacto a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section#contacto a:hover {
+    color: #e63946;
+}
+
+/* Estilos de los iconos en el footer */
+footer i {
+    font-size: 28px;
+}
+
+/* Estilos de la imagen en el concierto */
+.fanatika-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Animación del perro */
+.dog-image {
+    position: absolute;
+    z-index: 9999;
+    visibility: hidden;
+}
+
+.dog-img {
+    width: 100px; /* Ajusta el tamaño del perro */
+    height: auto;
+    animation: moveDog 6s linear forwards; /* Animación de movimiento */
+}
+
+/* Animación de movimiento */
+@keyframes moveDog {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Hacer visible el perro después de que se haya agregado */
+.dog-image.show {
+    visibility: visible;
+}
+
+/* Estilos adicionales para el perro */
+.dog-image {
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Desvanecimiento al aparecer */
+}
